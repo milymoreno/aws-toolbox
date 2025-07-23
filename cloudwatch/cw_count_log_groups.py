@@ -16,8 +16,9 @@ def count_log_groups():
     Returns:
         int: The total number of CloudWatch log groups.
     """
-    # Create a CloudWatch Logs client
-    client = boto3.client("logs")
+    # Create a CloudWatch Logs client with specific profile
+    session = boto3.Session(profile_name='AWSAdministratorAccess-3629XXXXXX23')
+    client = session.client("logs")
 
     # Initialize log group count
     log_group_count = 0
