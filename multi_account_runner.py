@@ -5,7 +5,7 @@ Autor: Asistente Kiro
 Licencia: MIT
 """
 
-import boto3
+
 import subprocess
 import sys
 import os
@@ -166,14 +166,14 @@ def print_summary(results: List[Dict]):
     # Mostrar resultados exitosos
     successful_results = [r for r in results if r['status'] == 'success' and r['output']]
     if successful_results:
-        print(f"\n🎯 RESULTADOS EXITOSOS:")
+        print("\n🎯 RESULTADOS EXITOSOS:")
         for result in successful_results:
             print(f"  • {result['profile']}: {result['output']}")
     
     # Mostrar errores
     failed_results = [r for r in results if r['status'] != 'success']
     if failed_results:
-        print(f"\n🚨 CUENTAS CON PROBLEMAS:")
+        print("\n🚨 CUENTAS CON PROBLEMAS:")
         for result in failed_results:
             print(f"  • {result['profile']}: {result['error']}")
 
